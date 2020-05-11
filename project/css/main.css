@@ -1,0 +1,172 @@
+
+/*#region Default Settings */
+
+    * {
+        --primary-color: rgb(255, 255, 255);
+        --secondary-color: rgba(0,0,0,.125);
+        --tertiary-color: rgb(213, 166, 189);
+    }
+
+    body, p, h1, h2, h3, h4, h5, h6, ul, ol, li {
+        margin: 0px;
+        padding: 0px;
+    }
+
+/*#endregion*/
+
+/*#region #menu */
+
+    #menu {
+        left: 0px !important;
+
+        height: 100vh !important;
+        max-height: 100vh !important;
+        min-height: 100vh !important;
+
+        max-width: 250px !important;
+        width: min-content;
+
+        position: sticky !important;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+
+    #menu img {
+        max-width: 100px !important;
+    }
+
+    #menu > *:not(#menu-toggle) {
+        width: 250px !important;
+        border-right: 1px solid var(--secondary-color);
+    }
+
+    /*#region #menu Components */
+
+        /*#region #menu-profile */
+            
+            #menu-profile {
+                text-align: center;
+                padding: 10px;
+                flex-grow: 1;
+            }
+
+            /*#region #menu-profile Components */
+        
+                .profile-pic > img {
+                    max-width: 100px;
+                    border-radius: 100%;
+                    padding: 3px;
+                    border: 1px solid var(--secondary-color);
+                }
+
+                .profile-pic:hover > img {
+                    background-color: var(--tertiary-color);
+                }
+
+            /*#endregion*/
+
+        /*#endregion*/
+        
+        /*#region #menu-nav */
+            
+            #menu-nav {
+                flex-grow: 1;
+            }
+
+            #menu-nav a {
+                text-decoration: none;
+                color: #000000;
+            }
+            
+            #menu-nav > ul {
+                height: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 0.5px 0px;
+                background-color: var(--secondary-color);
+            }
+
+            /*#region #menu-nav Components */
+
+                .nav-item {
+                    display: inline-block;
+                    margin: 0.5px 0px;
+                    background-color: var(--primary-color);
+                    height: 100%;
+                    text-align: center;
+                    padding: 5px;
+                }
+                
+                .nav-item:hover {
+                    border-left: 5px solid var(--tertiary-color);
+                }
+                
+                .nav-item > *:first-child {
+                    height: 100%;
+                    justify-content: center;
+                }
+
+            /*#endregion*/
+            
+            
+        
+        /*#endregion*/
+
+        /*#region #notifications-summary*/
+
+            #notifications-summary img {
+                flex-grow: 2;
+            }
+
+            #notifications-summary img {
+                width: 30px;
+            }
+            
+            #notifications-summary > *:not(#notifications-summary-body) {
+                text-align: center;
+                border-bottom: 1px solid var(--secondary-color);
+                padding: 10px;
+            }
+
+            /*#region #notifications-summary Components */
+
+                #notifications-summary-body {
+                    overflow: auto;
+                    direction: rtl;
+                    height: 40vh;
+                }
+                
+                #notifications-summary-body > * {
+                    margin: 10px;
+                }
+                
+                #notifications-summary-body .card > p {
+                    padding: 10px;
+                } 
+
+            /*#endregion*/
+
+        /*#endregion*/
+    
+        /*#region #menu-toggle */
+
+            #menu-toggle {
+                flex-basis: 100%;
+                margin: auto 0px;
+                max-height: 80px;
+                background-color: var(--secondary-color);
+                border: unset;
+            }
+
+        /*#endregion*/
+
+    /*#endregion*/
+
+/*#endregion*/
+
+
