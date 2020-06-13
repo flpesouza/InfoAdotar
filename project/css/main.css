@@ -1,172 +1,130 @@
-
-/*#region Default Settings */
+/*#region Default settings*/
 
     * {
-        --primary-color: rgb(255, 255, 255);
-        --secondary-color: rgba(0,0,0,.125);
-        --tertiary-color: rgb(213, 166, 189);
+        --primary-color: #FFFFFF;
+        --secondary-color: #D0D0D0;
+        --thirdary-color: #B4A7D6FF;
+        --quaternary-color: #8E7CC3FF;
+        --quinary-color: #674EA7FF;
+        /*
+        --senary-color: 
+        --septenary-color:
+        --octonary-color:
+        --nonary-color:
+        --denary-color:
+        */
     }
 
-    body, p, h1, h2, h3, h4, h5, h6, ul, ol, li {
-        margin: 0px;
-        padding: 0px;
-    }
-
-/*#endregion*/
-
-/*#region #menu */
-
-    #menu {
-        left: 0px !important;
-
-        height: 100vh !important;
-        max-height: 100vh !important;
-        min-height: 100vh !important;
-
-        max-width: 250px !important;
-        width: min-content;
-
-        position: sticky !important;
-
+    body {
+        width: 100vw;
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: start;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
-    #menu img {
-        max-width: 100px !important;
+    @font-face {
+        font-family: Comfortaa;
+        src: url(../font/Comfortaa/Comfortaa-VariableFont_wght.ttf);
     }
 
-    #menu > *:not(#menu-toggle) {
-        width: 250px !important;
-        border-right: 1px solid var(--secondary-color);
+    h1, h2 {
+        font-family: Comfortaa;
     }
 
-    /*#region #menu Components */
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0px;
+    }
 
-        /*#region #menu-profile */
-            
-            #menu-profile {
-                text-align: center;
-                padding: 10px;
-                flex-grow: 1;
-            }
-
-            /*#region #menu-profile Components */
-        
-                .profile-pic > img {
-                    max-width: 100px;
-                    border-radius: 100%;
-                    padding: 3px;
-                    border: 1px solid var(--secondary-color);
-                }
-
-                .profile-pic:hover > img {
-                    background-color: var(--tertiary-color);
-                }
-
-            /*#endregion*/
-
-        /*#endregion*/
-        
-        /*#region #menu-nav */
-            
-            #menu-nav {
-                flex-grow: 1;
-            }
-
-            #menu-nav a {
-                text-decoration: none;
-                color: #000000;
-            }
-            
-            #menu-nav > ul {
-                height: 100%;
-                display: flex;
-                flex-wrap: nowrap;
-                flex-direction: column;
-                justify-content: space-around;
-                padding: 0.5px 0px;
-                background-color: var(--secondary-color);
-            }
-
-            /*#region #menu-nav Components */
-
-                .nav-item {
-                    display: inline-block;
-                    margin: 0.5px 0px;
-                    background-color: var(--primary-color);
-                    height: 100%;
-                    text-align: center;
-                    padding: 5px;
-                }
-                
-                .nav-item:hover {
-                    border-left: 5px solid var(--tertiary-color);
-                }
-                
-                .nav-item > *:first-child {
-                    height: 100%;
-                    justify-content: center;
-                }
-
-            /*#endregion*/
-            
-            
-        
-        /*#endregion*/
-
-        /*#region #notifications-summary*/
-
-            #notifications-summary img {
-                flex-grow: 2;
-            }
-
-            #notifications-summary img {
-                width: 30px;
-            }
-            
-            #notifications-summary > *:not(#notifications-summary-body) {
-                text-align: center;
-                border-bottom: 1px solid var(--secondary-color);
-                padding: 10px;
-            }
-
-            /*#region #notifications-summary Components */
-
-                #notifications-summary-body {
-                    overflow: auto;
-                    direction: rtl;
-                    height: 40vh;
-                }
-                
-                #notifications-summary-body > * {
-                    margin: 10px;
-                }
-                
-                #notifications-summary-body .card > p {
-                    padding: 10px;
-                } 
-
-            /*#endregion*/
-
-        /*#endregion*/
-    
-        /*#region #menu-toggle */
-
-            #menu-toggle {
-                flex-basis: 100%;
-                margin: auto 0px;
-                max-height: 80px;
-                background-color: var(--secondary-color);
-                border: unset;
-            }
-
-        /*#endregion*/
-
-    /*#endregion*/
 
 /*#endregion*/
 
+/*#region Util*/
 
+    .logo-card {
+        font-weight: bolder;
+        color: var(--thirdary-color);
+        margin: 10px;
+        text-align: center;
+    }
+
+    .logo-card > img {
+        width: 75px;
+    }
+
+    .profile-card {
+        text-align: center;
+        padding: 5px;
+    }
+
+    .profile-pic {
+        padding: 2.5px;
+        border-radius: 50%;
+        max-width: 100px;
+        background-color: var(--thirdary-color);
+    }
+
+    .profile-pic:hover {
+        background-color: var(--quinary-color);
+    }
+
+/*#endregion*/
+
+/*#region Layout*/
+
+    #pageHeader {
+        background-color: var(--thirdary-color);
+        color: var(--primary-color);
+        padding: 10px;
+        display: flex;
+        justify-content: start;
+    }
+
+    #pageHeader > * {
+        margin-right: 10px;
+    }
+
+    #pageHeader img {
+        max-height: 30px;
+    }
+
+    #pageConternt {
+        flex: 1;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    #menu {
+        background-color: var(--quaternary-color);
+        color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: fit-content;
+        right: 0px;
+        height: 100%;
+    }
+
+    #menu nav > a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: 20px;
+        padding: 2px;
+        background-color: inherit;
+    }
+
+    #menu nav > a:hover {
+        background-color: var(--quinary-color) !important;
+    }
+
+    #mainContent {
+        flex: 1;
+        overflow-y: scroll;
+    }
+
+/*#endregion*/
