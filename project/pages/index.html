@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/pages/index.css" />
 
+    <!--JavaScript-->
+    <script src="../js/util/util.js"></script>
+    <script src="../js/dal/dal.js"></script>
+    <script src="../js/controller/userController.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/pages/index.js"></script>
+
 </head>
 
 <body>
@@ -26,15 +33,15 @@
             <h1>InfoAdotar</h1>
         </div>
         <div id="loginCard">
-            <form id=loginForm>
+            <form id="loginForm">
                 <div class="form-head-div">
                     <h2>Login</h2>
                 </div>
                 <div class="form-data-div form-group">
-                    <label for="loginForm-email">E-mail:</label>
-                    <input id="loginForm-email" name="email" class="form-control" type="email">
-                    <label for="loginForm-email">Senha:</label>
-                    <input id="loginForm-password" name="password" class="form-control" type="password">
+                    <label for="loginFormEmail">E-mail:</label>
+                    <input id="loginFormEmail" name="email" class="form-control" type="email" required>
+                    <label for="loginFormPassword">Senha:</label>
+                    <input id="loginFormPassword" name="password" class="form-control" type="password" required>
                 </div>
                 <div class="form-action-div">
                     <ul>
