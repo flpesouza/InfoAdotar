@@ -1,11 +1,9 @@
-/// <summary>
-/// Check if the model is valid
-/// </summary>
-/// <param name="model">the class model</param>
-/// <returns>a boolean result</returns>
+//<summary>
+//Create a new model instance
+//</summary>
 function User(nome, email, senha, tipo) {
     this.nome = nome;
-    this.email = email;
+    this.email = email.toLowerCase();
     this.senha = senha;
     this.tipo = tipo;
 }
@@ -16,9 +14,16 @@ class UserController {
         this.table = table;
         this.sessionKey = sessionKey;
 
-        let data = DAL.readAll(this.table);
-        if (!Array.isArray(data))
-            DAL.setTable(table);
+        DAL.readAll(
+            table, 
+            function (data) {
+                if (!Array.isArray(data))
+                    DAL.setTable(table);
+            },
+            function () {
+                DAL.setTable(table);
+            }
+        );
     }
 
     isValid(model, trueCallback, falseCallback) {
@@ -39,12 +44,10 @@ class UserController {
                     this.table,
                     function (e) { return e.email == model.email && e.id != model.id },
                     function (list) {
-                        if (list.length > 0) {
+                        if (list.length > 0)
                             falseCallback("Email já existente");
-                        }
-                        else {
+                        else
                             trueCallback();
-                        }
                     },
                     function () {
                         falseCallback("Erro ao buscar dados pela DAL");
@@ -52,9 +55,7 @@ class UserController {
                 );
             }
         }
-        else {
-            falseCallback("Modelo de dados não é compativel");
-        }
+        else falseCallback("Modelo de dados não é compativel");
     }
 
     create(model, success, error) {
@@ -115,7 +116,7 @@ class UserController {
             //Get all users with the email and senha equals to the input values
             this.filter(
                 function (model) {
-                    return model.email == email && model.senha == senha;
+                    return model.email.toLowerCase() == email && model.senha == senha;
                 },
                 //DAL success
                 function (user) {
