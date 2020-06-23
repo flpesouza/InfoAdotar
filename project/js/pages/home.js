@@ -1,5 +1,5 @@
 
-$.getJSON("../devDataBase.json", function (data) {
+$.getJSON("../js/devDataBase.json", function (data) {
 let tela = document.getElementById("fArea");
 let content="";
 data=data.TbFaq;
