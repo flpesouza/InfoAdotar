@@ -1,3 +1,6 @@
+main{
+    background-color: #D0D0D0;
+}
 .ok{
     margin-right: 1em;
     margin-left: 1em;
@@ -6,6 +9,7 @@
 .ko{
     margin-top: 1em;
     
+    
 }
 .grafico{
    
@@ -13,6 +17,12 @@
    height: 250px;
    align-items:center;
    
+}
+.color{
+    background-color:  #b4a7d6;
+}
+.color2{
+    background-color:  #957cd4;
 }
 .escrever{
     max-width: 200px;
